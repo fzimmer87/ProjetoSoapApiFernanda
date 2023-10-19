@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="058d9b81-6a47-4d3c-b14d-5f8abb07c6e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ConexaoPostgress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ConexaoSQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/CelsiusFahrenheit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/Countries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/NumberToDolar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/NumberToWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/conexaoMySQL/PesquisaEmBancoDeDados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/resultado/ResponseSQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/LerProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/LerResultProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Teste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/metodos/SoapEmJava.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/feature/soap.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/properties/RESULT.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/properties/SOAP.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/properties/URI.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/properties/URL.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Fernanda/Treinamento/Projeto-BancoDeDadosJava-Edson-Fernanda",
-    "settings.editor.selected.configurable": "IntelliLang.Configuration"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Fernanda/Treinamento/Projeto-BancoDeDadosJava-Edson-Fernanda&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;IntelliLang.Configuration&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Fernanda\ProjetoSoapApiFernanda\src\test\resources\feature" />
