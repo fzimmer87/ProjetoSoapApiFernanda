@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="058d9b81-6a47-4d3c-b14d-5f8abb07c6e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/NumberToWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/NumberToWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/conexaoMySQL/PesquisaEmBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conexaoMySQL/PesquisaEmBancoDeDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resultado/ResponseSQL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/metodos/SoapEmJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/metodos/SoapEmJava.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/java/org/example/metodos/SoapEmJava.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2WJDPqDcYTJlQrAoA3CUQ3aBFFL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -33,14 +43,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Fernanda/Treinamento/Projeto-BancoDeDadosJava-Edson-Fernanda&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;IntelliLang.Configuration&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Fernanda/ProjetosEstagio/TesteForwardCarFernandaExcel",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "IntelliLang.Configuration"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Fernanda\ProjetoSoapApiFernanda\src\test\resources\feature" />

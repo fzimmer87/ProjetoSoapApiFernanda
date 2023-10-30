@@ -9,44 +9,41 @@ import static io.restassured.RestAssured.given;
 
 public class AppTest {
 
-    public static Response postNumberToWords() throws SOAPException, IOException, InterruptedException {
+    public static Response postNumberToWords(String numero) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyNumberWord())
+                .body(SoapEmJava.bodyNumberWord(numero))
                 .when()
                 .post(prop.getURLnumber())
                 .then()
-                .log().all()
                 .extract().response();
     }
-    public static Response postNumberDolars() throws SOAPException, IOException, InterruptedException {
+    public static Response postNumberDolars(String numero) throws SOAPException, IOException, InterruptedException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyNumberDolar())
+                .body(SoapEmJava.bodyNumberDolar(numero))
                 .when()
                 .post(prop.getURLnumber())
                 .then()
-                .log().all()
                 .extract().response();
     }
-    public static Response postDivisao() throws SOAPException, IOException {
+    public static Response postDivisao(String valor1, String valor2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.calcularDivisao())
+                .body(SoapEmJava.calcularDivisao(valor1,valor2))
                 .when()
                 .post(prop.getURLCalculator())
                 .then()
-                .log().all()
                 .extract().response();
     }
-    public static Response postMultiplicacao() throws SOAPException, IOException {
+    public static Response postMultiplicacao(String valor1, String valor2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.calcularMultiplicacao())
+                .body(SoapEmJava.calcularMultiplicacao(valor1,valor2))
                 .when()
                 .post(prop.getURLCalculator())
                 .then()

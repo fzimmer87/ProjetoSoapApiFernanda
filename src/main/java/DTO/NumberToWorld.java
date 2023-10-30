@@ -1,6 +1,6 @@
 package DTO;
 
-public class NumberToWord {
+public class NumberToWorld {
     String num;
     String numextenso;
 

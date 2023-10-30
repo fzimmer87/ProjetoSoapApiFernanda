@@ -15,12 +15,12 @@ public class PesquisaEmBancoDeDados {
     PreparedStatement pstm;
     Connection conn;
     ResultSet resultado;
-    ArrayList<NumberToWord> lista = new ArrayList<>();
+    ArrayList<NumberToWorld> lista = new ArrayList<>();
     ArrayList<NumberToDolar> lista2 = new ArrayList<>();
     ArrayList<Calculator> lista3 = new ArrayList<>();
     ArrayList<Countries> lista4 = new ArrayList<>();
     ArrayList<CelsiusFahrenheit> lista5 = new ArrayList<>();
-    public ArrayList<NumberToWord> pesquisarDadosUsuarios() {
+    public ArrayList<NumberToWorld> pesquisarDadosUsuarios() {
 
         String sql = "SELECT * FROM numbertoword";
         conn = ConexaoSQL.getConexao();
@@ -30,7 +30,7 @@ public class PesquisaEmBancoDeDados {
             resultado = pstm.executeQuery(sql);
 
             while (resultado.next()) {
-                NumberToWord numberToWord = new NumberToWord();
+                NumberToWorld numberToWord = new NumberToWorld();
                 numberToWord.setNum(resultado.getString("valor"));
                 numberToWord.setNumextenso(resultado.getString("numextenso"));
                 lista.add(numberToWord);
@@ -39,7 +39,8 @@ public class PesquisaEmBancoDeDados {
         }
         return lista;
     }
-    public List<NumberToDolar> pesquisaSQLNumberToDolar() throws InterruptedException {
+  
+    public List<NumberToDolar> pesquisaSQLNumberToDolar() {
 
         String sql = "SELECT * FROM NumberToDolar";
         conn = new ConexaoSQL().getConexao();

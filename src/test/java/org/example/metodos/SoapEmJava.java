@@ -2,6 +2,8 @@ package org.example.metodos;
 
 import DTO.*;
 import conexaoMySQL.PesquisaEmBancoDeDados;
+import io.restassured.response.Response;
+import org.example.AppTest;
 import utils.LerProperties;
 
 import javax.xml.namespace.QName;
@@ -17,37 +19,31 @@ import java.util.List;
 
 public class SoapEmJava {
     static PesquisaEmBancoDeDados pesquisaDAO = new PesquisaEmBancoDeDados();
-    public static String bodyNumberWord() throws SOAPException, IOException {
-        ArrayList<NumberToWord> lista = pesquisaDAO.pesquisarDadosUsuarios();
-        LerProperties prop = new LerProperties();
-        MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
-        SOAPMessage message = factory.createMessage();
-        SOAPBody body = message.getSOAPBody();
-
-        String namespaceURI = prop.getNumbersURI();
-        String namespacePrefix = prop.getWeb();
-
-        String localName = prop.getNumberToWords();
-        QName bodyName = new QName(namespaceURI, localName, namespacePrefix);
-        SOAPBodyElement bodyElement = body.addBodyElement(bodyName);
-
-        QName name = new QName(namespaceURI, prop.getUbiNum(), namespacePrefix);
-        SOAPElement symbol = bodyElement.addChildElement(name);
-        for (NumberToWord numberToWord : lista) symbol.addTextNode(numberToWord.getNum());
-
-        try {
-            StringWriter sw = new StringWriter();
-            TransformerFactory.newInstance().newTransformer().transform(
-                    new DOMSource(message.getSOAPPart()), new StreamResult(sw));
-            return sw.toString();
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public static String bodyNumberWord(String numero) throws SOAPException, IOException {
+            LerProperties prop = new LerProperties();
+            MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
+            SOAPMessage message = factory.createMessage();
+            SOAPBody body = message.getSOAPBody();
+            String namespaceURI = prop.getNumbersURI();
+            String namespacePrefix = prop.getWeb();
+            String localName = prop.getNumberToWords();
+            QName bodyName = new QName(namespaceURI, localName, namespacePrefix);
+            SOAPBodyElement bodyElement = body.addBodyElement(bodyName);
+            QName name = new QName(namespaceURI, prop.getUbiNum(), namespacePrefix);
+            SOAPElement symbol = bodyElement.addChildElement(name);
+            symbol.addTextNode(numero);
+            try {
+                StringWriter sw = new StringWriter();
+                TransformerFactory.newInstance().newTransformer().transform(
+                        new DOMSource(message.getSOAPPart()), new StreamResult(sw));
+                return sw.toString();
+            } catch (TransformerException e) {
+                e.printStackTrace();
+            }
+            return null;
     }
 
-    public static String bodyNumberDolar() throws SOAPException, IOException, InterruptedException {
-        List<NumberToDolar> lista = pesquisaDAO.pesquisaSQLNumberToDolar();
+    public static String bodyNumberDolar(String numero) throws SOAPException, IOException, InterruptedException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -62,9 +58,7 @@ public class SoapEmJava {
 
         QName name = new QName(namespaceURI, prop.getdNum(), namespacePrefix);
         SOAPElement symbol = bodyElement.addChildElement(name);
-        for (NumberToDolar numberToDolar : lista) {
-            symbol.addTextNode(numberToDolar.getNum());
-        }
+        symbol.addTextNode(numero);
 
 
         try {
@@ -78,8 +72,7 @@ public class SoapEmJava {
         return null;
     }
 
-    public static String calcularDivisao() throws SOAPException, IOException {
-        List<Calculator> calculators = pesquisaDAO.pesquisaDivide();
+    public static String calcularDivisao(String valor1, String valor2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -89,14 +82,13 @@ public class SoapEmJava {
         String nomeMetodo = prop.getDivide();
         QName bodyDivide = new QName(nomeURI, nomeMetodo);
         SOAPBodyElement bodyElement = body.addBodyElement(bodyDivide);
-        for (Calculator calculator : calculators) {
             QName intAName = new QName(nomeURI, prop.getIntANumber());
             SOAPElement intAElement = bodyElement.addChildElement(intAName);
-            intAElement.addTextNode(calculator.getValor1Divide());
+            intAElement.addTextNode(valor1);
             QName intBName = new QName(nomeURI, prop.getIntBNumber());
             SOAPElement intBElement = bodyElement.addChildElement(intBName);
-            intBElement.addTextNode(calculator.getValor2Divide());
-        }
+            intBElement.addTextNode(valor2);
+
 
         try {
             StringWriter sw = new StringWriter();
@@ -109,25 +101,22 @@ public class SoapEmJava {
         return null;
     }
 
-    public static String calcularMultiplicacao() throws SOAPException, IOException {
-        List<Calculator> list = pesquisaDAO.pesquisaMultiplique();
+    public static String calcularMultiplicacao(String valor1, String valor2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
         SOAPMessage message = factory.createMessage();
         SOAPBody body = message.getSOAPBody();
-
         String nomeURI = prop.getCalculatorURI();
         String nomeMetodo = prop.getMultiply();
         QName bodyMultiplica = new QName(nomeURI, nomeMetodo);
         SOAPBodyElement bodyElement = body.addBodyElement(bodyMultiplica);
-        for (Calculator calculator : list) {
             QName intAName = new QName(nomeURI, prop.getIntANumber());
             SOAPElement intAElement = bodyElement.addChildElement(intAName);
-            intAElement.addTextNode(calculator.getValor1Multiplica());
+            intAElement.addTextNode(valor1);
             QName intBName = new QName(nomeURI, prop.getIntBNumber());
             SOAPElement intBElement = bodyElement.addChildElement(intBName);
-            intBElement.addTextNode(calculator.getValor2Multiplica());
-        }
+            intBElement.addTextNode(valor2);
+
         try {
 
             StringWriter sw = new StringWriter();
