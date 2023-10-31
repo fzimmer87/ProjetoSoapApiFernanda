@@ -39,22 +39,22 @@ public class AppTest {
                 .then()
                 .extract().response();
     }
-    public static Response postMultiplicacao(String valor1, String valor2) throws SOAPException, IOException {
+    public static Response postMultiplicacao(String mult1, String mult2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.calcularMultiplicacao(valor1,valor2))
+                .body(SoapEmJava.calcularMultiplicacao(mult1,mult2))
                 .when()
                 .post(prop.getURLCalculator())
                 .then()
                 .log().all()
                 .extract().response();
     }
-    public static Response postSubtracao() throws SOAPException, IOException {
+    public static Response postSubtracao(String valor1, String valor2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.calcularSubtracao())
+                .body(SoapEmJava.calcularSubtracao(valor1,valor2))
                 .when()
                 .post(prop.getURLCalculator())
                 .then()
@@ -83,26 +83,24 @@ public class AppTest {
                 .log().all()
                 .extract().response();
     }
-    public static Response postCapitalbyName () throws SOAPException, IOException {
+    public static Response postCapitalbyName (String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyCaptialCityforCountry())
+                .body(SoapEmJava.bodyCaptialCityforCountry(valor1))
                 .when()
                 .post(prop.getURLcontinents())
                 .then()
-                .log().all()
                 .extract().response();
     }
-    public static Response postMoedasDoMundo () throws SOAPException, IOException {
+    public static Response postMoedasDoMundo (String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyMoedasDoMundo())
+                .body(SoapEmJava.bodyMoedasDoMundo(valor1))
                 .when()
                 .post(prop.getURLcontinents())
                 .then()
-                .log().all()
                 .extract().response();
     }
     public static Response postBandeirasDoMundo () throws SOAPException, IOException {
@@ -113,18 +111,16 @@ public class AppTest {
                 .when()
                 .post(prop.getURLcontinents())
                 .then()
-                .log().all()
                 .extract().response();
     }
-    public static Response postCodigoTelefonico () throws SOAPException, IOException {
+    public static Response postCodigoTelefonico (String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyCodigoTelefonico())
+                .body(SoapEmJava.bodyCodigoTelefonico(valor1))
                 .when()
                 .post(prop.getURLcontinents())
                 .then()
-                .log().all()
                 .extract().response();
     }
     public static Response postbodyNomeDaMoedaDeCadaPais() throws SOAPException, IOException {
@@ -171,22 +167,22 @@ public class AppTest {
                 .log().all()
                 .extract().response();
     }
-    public static Response postCelsiusFahrenheit() throws SOAPException, IOException {
+    public static Response postCelsiusFahrenheit(String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyCelsiusFahrenheit())
+                .body(SoapEmJava.bodyCelsiusFahrenheit(valor1))
                 .when()
                 .post(prop.getURLtemperature())
                 .then()
                 .log().all()
                 .extract().response();
     }
-    public static Response postFahrenheitCelsius() throws SOAPException, IOException {
+    public static Response postFahrenheitCelsius(String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         return given()
                 .contentType(prop.getTextXML())
-                .body(SoapEmJava.bodyFahrenheitCelsius())
+                .body(SoapEmJava.bodyFahrenheitCelsius(valor1))
                 .when()
                 .post(prop.getURLtemperature())
                 .then()

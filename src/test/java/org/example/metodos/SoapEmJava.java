@@ -2,8 +2,6 @@ package org.example.metodos;
 
 import DTO.*;
 import conexaoMySQL.PesquisaEmBancoDeDados;
-import io.restassured.response.Response;
-import org.example.AppTest;
 import utils.LerProperties;
 
 import javax.xml.namespace.QName;
@@ -14,7 +12,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SoapEmJava {
@@ -101,7 +98,7 @@ public class SoapEmJava {
         return null;
     }
 
-    public static String calcularMultiplicacao(String valor1, String valor2) throws SOAPException, IOException {
+    public static String calcularMultiplicacao(String mult1, String mult2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -112,10 +109,10 @@ public class SoapEmJava {
         SOAPBodyElement bodyElement = body.addBodyElement(bodyMultiplica);
             QName intAName = new QName(nomeURI, prop.getIntANumber());
             SOAPElement intAElement = bodyElement.addChildElement(intAName);
-            intAElement.addTextNode(valor1);
+            intAElement.addTextNode(mult1);
             QName intBName = new QName(nomeURI, prop.getIntBNumber());
             SOAPElement intBElement = bodyElement.addChildElement(intBName);
-            intBElement.addTextNode(valor2);
+            intBElement.addTextNode(mult2);
 
         try {
 
@@ -129,8 +126,7 @@ public class SoapEmJava {
         return null;
     }
 
-    public static String calcularSubtracao() throws SOAPException, IOException {
-        List<Calculator>list = pesquisaDAO.pesquisaSubtrai();
+    public static String calcularSubtracao(String valor1, String valor2) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -140,16 +136,15 @@ public class SoapEmJava {
         String nomeMetodo = prop.getSubtract();
         QName bodySubtrai = new QName(nomeURI, nomeMetodo);
         SOAPBodyElement bodyElement = body.addBodyElement(bodySubtrai);
-        for (Calculator calculator : list) {
+
             QName intAName = new QName(nomeURI, prop.getIntANumber());
             SOAPElement intAElement = bodyElement.addChildElement(intAName);
-            intAElement.addTextNode(calculator.getValor1Subtrai());
+            intAElement.addTextNode(valor1);
 
             QName intBName = new QName(nomeURI, prop.getIntBNumber());
             SOAPElement intBElement = bodyElement.addChildElement(intBName);
-            intBElement.addTextNode(calculator.getValor2Subtrai());
+            intBElement.addTextNode(valor2);
 
-        }
 
         try {
 
@@ -205,8 +200,8 @@ public class SoapEmJava {
         }
         return null;
     }
-    public static String bodyCaptialCityforCountry() throws SOAPException, IOException {
-        List<Countries>list = pesquisaDAO.pesquisaCapitalPais();
+    public static String bodyCaptialCityforCountry(String valor1) throws SOAPException, IOException {
+
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -219,9 +214,7 @@ public class SoapEmJava {
 
         QName listaName = new QName(nomeURI, prop.getScountryISOCode(),prop.getSoapEndPoint());
         SOAPElement intAElement = bodyElement.addChildElement(listaName);
-        for (Countries countries : list) {
-            intAElement.addTextNode(countries.getSiglaPais());
-        }
+            intAElement.addTextNode(valor1);
 
         try {
             StringWriter sw = new StringWriter();
@@ -233,8 +226,8 @@ public class SoapEmJava {
         }
         return null;
     }
-    public static String bodyMoedasDoMundo() throws SOAPException, IOException {
-        List<Countries>list = pesquisaDAO.pesquisaMoedaPais();
+    public static String bodyMoedasDoMundo(String valor1) throws SOAPException, IOException {
+
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -244,11 +237,9 @@ public class SoapEmJava {
         String nomeMetodo = prop.getCountryCurrency();
         QName bodyLista = new QName( nomeURI,nomeMetodo,prop.getSoapEndPoint());
         SOAPBodyElement bodyElement = body.addBodyElement(bodyLista);
-        for (Countries countries : list) {
             QName listaName = new QName(nomeURI, prop.getScountryISOCode(), prop.getSoapEndPoint());
             SOAPElement intAElement = bodyElement.addChildElement(listaName);
-            intAElement.addTextNode(countries.getSiglaPais());
-        }
+            intAElement.addTextNode(valor1);
 
         try {
             StringWriter sw = new StringWriter();
@@ -261,7 +252,7 @@ public class SoapEmJava {
         return null;
     }
     public static String bodyBandeirasDoMundo() throws SOAPException, IOException {
-        List<Countries>list = pesquisaDAO.pesquisaMoedaPais();
+        List<MoedaPais>list = pesquisaDAO.pesquisaMoedaPais();
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -272,7 +263,7 @@ public class SoapEmJava {
         QName bodyLista = new QName( nomeURI,nomeMetodo,prop.getSoapEndPoint());
         SOAPBodyElement bodyElement = body.addBodyElement(bodyLista);
 
-        for (Countries countries : list) {
+        for (MoedaPais countries : list) {
             QName listaName = new QName(nomeURI, prop.getScountryISOCode());
             SOAPElement intAElement = bodyElement.addChildElement(listaName);
             intAElement.addTextNode(countries.getSiglaPais());
@@ -289,8 +280,7 @@ public class SoapEmJava {
         }
         return null;
     }
-    public static String bodyCodigoTelefonico() throws SOAPException, IOException {
-        List<Countries> list = pesquisaDAO.pesquisaDDIPais();
+    public static String bodyCodigoTelefonico(String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -300,11 +290,11 @@ public class SoapEmJava {
         String nomeMetodo = prop.getCountryIntPhoneCode();
         QName bodyLista = new QName( nomeURI,nomeMetodo,prop.getSoapEndPoint());
         SOAPBodyElement bodyElement = body.addBodyElement(bodyLista);
-        for (Countries countries : list) {
+
             QName listaName = new QName(nomeURI, prop.getScountryISOCode());
             SOAPElement intAElement = bodyElement.addChildElement(listaName);
-            intAElement.addTextNode(countries.getSiglaPais());
-        }
+            intAElement.addTextNode(valor1);
+
 
         try {
 
@@ -408,9 +398,8 @@ public class SoapEmJava {
         }
         return null;
     }
-    public static String bodyCelsiusFahrenheit() throws SOAPException, IOException {
+    public static String bodyCelsiusFahrenheit(String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
-        List<CelsiusFahrenheit>list = pesquisaDAO.pesquisaCelsiusFahrenheit();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
         SOAPBody body = message.getSOAPBody();
@@ -419,11 +408,10 @@ public class SoapEmJava {
         String nomeMetodo = prop.getCelsiusToFahrenheit();
         QName bodyLista = new QName( nomeURI,nomeMetodo,prop.getSoap12());
         SOAPBodyElement bodyElement = body.addBodyElement(bodyLista);
-        for (CelsiusFahrenheit celsius : list) {
             QName listaName = new QName(nomeURI, prop.getCelsius());
             SOAPElement intAElement = bodyElement.addChildElement(listaName);
-            intAElement.addTextNode(celsius.getCelsius());
-        }
+            intAElement.addTextNode(valor1);
+
         try {
 
             StringWriter sw = new StringWriter();
@@ -435,8 +423,7 @@ public class SoapEmJava {
         }
         return null;
     }
-    public static String bodyFahrenheitCelsius() throws SOAPException, IOException {
-        List<CelsiusFahrenheit>list = pesquisaDAO.pesquisaCelsiusFahrenheit();
+    public static String bodyFahrenheitCelsius(String valor1) throws SOAPException, IOException {
         LerProperties prop = new LerProperties();
         MessageFactory factory = MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);
         SOAPMessage message = factory.createMessage();
@@ -446,11 +433,11 @@ public class SoapEmJava {
         String nomeMetodo = prop.getFahrenheitToCelsius();
         QName bodyLista = new QName( nomeURI,nomeMetodo,prop.getSoap12());
         SOAPBodyElement bodyElement = body.addBodyElement(bodyLista);
-        for (CelsiusFahrenheit celsiusFahrenheit : list) {
+
             QName listaName = new QName(nomeURI, prop.getFahrenheit());
             SOAPElement intAElement = bodyElement.addChildElement(listaName);
-            intAElement.addTextNode(celsiusFahrenheit.getFahrenheit());
-        }
+            intAElement.addTextNode(valor1);
+
 
         try {
 

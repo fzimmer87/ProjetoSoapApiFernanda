@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="058d9b81-6a47-4d3c-b14d-5f8abb07c6e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/MoedaPais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/Multiplicacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/Subtracao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/TelefonePais.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/NumberToWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/NumberToWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/Countries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/Countries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/conexaoMySQL/PesquisaEmBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conexaoMySQL/PesquisaEmBancoDeDados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resultado/ResponseSQL.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MyStepdefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/metodos/SoapEmJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/metodos/SoapEmJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/feature/soap.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/feature/soap.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/properties/RESULT.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/properties/RESULT.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Fernanda/ProjetosEstagio/TesteForwardCarFernandaExcel",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "IntelliLang.Configuration"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Fernanda/ProjetosEstagio/TesteForwardCarFernandaExcel&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;IntelliLang.Configuration&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Fernanda\ProjetoSoapApiFernanda\src\test\resources\feature" />
@@ -161,6 +167,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/org/example/testes/Teste4.java</url>
           <line>16</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/example/AppTest.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

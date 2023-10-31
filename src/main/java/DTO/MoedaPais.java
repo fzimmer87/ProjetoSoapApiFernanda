@@ -1,8 +1,8 @@
 package DTO;
 
-public class Countries {
+public class MoedaPais {
     String siglaPais;
-    String capitalPais;
+    String moedaPais;
 
     public String getSiglaPais() {
         return siglaPais;
@@ -12,12 +12,11 @@ public class Countries {
         this.siglaPais = siglaPais;
     }
 
-    public String getCapitalPais() {
-        return capitalPais;
+    public String getMoedaPais() {
+        return moedaPais;
     }
 
-    public void setCapitalPais(String capitalPais) {
-        this.capitalPais = capitalPais;
+    public void setMoedaPais(String moedaPais) {
+        this.moedaPais = moedaPais;
     }
-
 }

@@ -36,30 +36,27 @@ Funcionalidade: Testar API em SOAP no Java
   Cenario: Testar Api List of Country Names By Name
     Dado que tenho acesso ao Post da Api Lista de Paises
     Entao sistema me retorna uma lista com paises do mundo
-    E statusCode 200
 
   @CT008
   Cenario: Testar Api Captial City for a Country
     Dado que tenho acesso ao Post da Api Capital dos paises
-    Entao sistema me retorna a capital do pais digitado na requisicao Body
-    E statusCode 200
+    Entao sistema me retorna a capital do pais digitado na requisicao Body e statusCode 200
 
   @CT009
   Cenario: Testar Api Currency for a Country
     Dado que digito a sigla de um pais no body da api
-    Entao sistema me retorna nome da moeda do pais
-    E statusCode 200
+    Entao sistema me retorna nome da moeda do pais e statusCode 200
 
   @CT010
   Cenario: Testar Api Flag for a Country
     Dado que digito a sigla de um pais no body da api Flag for a Country
-    Entao sistema me retorna um link com a imagem da bandeira
-    E statusCode 200
+    Entao sistema me retorna um link com a imagem da bandeira e statusCode 200
+
 
   @CT011
   Cenario: Testar Api International Phone Code for a Country Copy
     Dado que digito a sigla de um pais no body da api International Phone Code for a Country Copy
-    Entao sistema me retorna DDI do pais que digitei
+    Entao sistema me retorna DDI do pais que digitei e statusCode 200
 
   @CT012
   Cenario: Testar Api List of Currencies by Name
@@ -88,13 +85,11 @@ Funcionalidade: Testar API em SOAP no Java
   @CT016
   Cenario: Testar Api Celsius to Farenheit Conversion
     Dado que digito uma temperatura na Api Celsius to Farenheit Conversion
-    Entao sistema me retorna a conversao de Celsius para Farenheit
-    E statusCode 200
+    Entao sistema me retorna a conversao de Celsius para Farenheit e statusCode 200
 
   @CT017
   Cenario: Testar Api Farenheit to Celsius Conversion
     Dado que digito uma temperatura na Api Farenheit to Celsius Conversion
-    Entao sistema me retorna a conversao de Farenheit para Celsius
-    E statusCode 200
+    Entao sistema me retorna a conversao de Farenheit para Celsius e statusCode 200
 
 

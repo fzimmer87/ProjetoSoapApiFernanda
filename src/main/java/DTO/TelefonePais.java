@@ -1,8 +1,8 @@
 package DTO;
 
-public class Countries {
+public class TelefonePais {
     String siglaPais;
-    String capitalPais;
+    String ddiPais;
 
     public String getSiglaPais() {
         return siglaPais;
@@ -12,12 +12,11 @@ public class Countries {
         this.siglaPais = siglaPais;
     }
 
-    public String getCapitalPais() {
-        return capitalPais;
+    public String getDdiPais() {
+        return ddiPais;
     }
 
-    public void setCapitalPais(String capitalPais) {
-        this.capitalPais = capitalPais;
+    public void setDdiPais(String ddiPais) {
+        this.ddiPais = ddiPais;
     }
-
 }

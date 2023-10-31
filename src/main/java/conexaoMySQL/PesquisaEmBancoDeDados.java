@@ -18,6 +18,10 @@ public class PesquisaEmBancoDeDados {
     ArrayList<NumberToWorld> lista = new ArrayList<>();
     ArrayList<NumberToDolar> lista2 = new ArrayList<>();
     ArrayList<Calculator> lista3 = new ArrayList<>();
+    ArrayList<Multiplicacao> lista6 = new ArrayList<>();
+    ArrayList<Subtracao> lista7 = new ArrayList<>();
+    ArrayList<MoedaPais> lista8 = new ArrayList<>();
+    ArrayList<TelefonePais> lista9 = new ArrayList<>();
     ArrayList<Countries> lista4 = new ArrayList<>();
     ArrayList<CelsiusFahrenheit> lista5 = new ArrayList<>();
     public ArrayList<NumberToWorld> pesquisarDadosUsuarios() {
@@ -77,7 +81,7 @@ public class PesquisaEmBancoDeDados {
         }
         return lista3;
     }
-    public List<Calculator> pesquisaMultiplique(){
+    public List<Multiplicacao> pesquisaMultiplique(){
         String sql = "SELECT * FROM calculatormultiplica";
         conn = new ConexaoSQL().getConexao();
         try {
@@ -85,17 +89,17 @@ public class PesquisaEmBancoDeDados {
             resultado = pstm.executeQuery(sql);
 
             while (resultado.next()) {
-                Calculator calculator = new Calculator();
+                Multiplicacao calculator = new Multiplicacao();
                 calculator.setValor1Multiplica(resultado.getString("valor1"));
                 calculator.setValor2Multiplica(resultado.getString("valor2"));
                 calculator.setResultadoMultiplica(resultado.getString("resultado"));
-                lista3.add(calculator);
+                lista6.add(calculator);
             }
         } catch (SQLException ex) {
         }
-        return lista3;
+        return lista6;
     }
-    public List<Calculator> pesquisaSubtrai(){
+    public List<Subtracao> pesquisaSubtrai(){
         String sql = "SELECT * FROM calculatorsubtrai";
         conn = new ConexaoSQL().getConexao();
         try {
@@ -103,15 +107,15 @@ public class PesquisaEmBancoDeDados {
             resultado = pstm.executeQuery(sql);
 
             while (resultado.next()) {
-                Calculator calculator = new Calculator();
+                Subtracao calculator = new Subtracao();
                 calculator.setValor1Subtrai(resultado.getString("valor1"));
                 calculator.setValor2Subtrai(resultado.getString("valor2"));
                 calculator.setResultadoSubtrai(resultado.getString("resultado"));
-                lista3.add(calculator);
+                lista7.add(calculator);
             }
         } catch (SQLException ex) {
         }
-        return lista3;
+        return lista7;
     }
 
     public List<Countries> pesquisaCapitalPais(){
@@ -131,7 +135,7 @@ public class PesquisaEmBancoDeDados {
         }
         return lista4;
     }
-    public List<Countries> pesquisaMoedaPais(){
+    public List<MoedaPais> pesquisaMoedaPais(){
         String sql = "SELECT * FROM moedapais";
         conn = new ConexaoSQL().getConexao();
         try {
@@ -139,16 +143,16 @@ public class PesquisaEmBancoDeDados {
             resultado = pstm.executeQuery(sql);
 
             while (resultado.next()) {
-                Countries countries = new Countries();
+                MoedaPais countries = new MoedaPais();
                 countries.setSiglaPais(resultado.getString("pais"));
                 countries.setMoedaPais(resultado.getString("moeda"));
-                lista4.add(countries);
+                lista8.add(countries);
             }
         } catch (SQLException ex) {
         }
-        return lista4;
+        return lista8;
     }
-    public List<Countries> pesquisaDDIPais(){
+    public List<TelefonePais> pesquisaDDIPais(){
         String sql = "SELECT * FROM ddipais";
         conn = new ConexaoSQL().getConexao();
         try {
@@ -156,14 +160,14 @@ public class PesquisaEmBancoDeDados {
             resultado = pstm.executeQuery(sql);
 
             while (resultado.next()) {
-                Countries countries = new Countries();
+                TelefonePais countries = new TelefonePais();
                 countries.setSiglaPais(resultado.getString("pais"));
                 countries.setDdiPais(resultado.getString("ddi"));
-                lista4.add(countries);
+                lista9.add(countries);
             }
         } catch (SQLException ex) {
         }
-        return lista4;
+        return lista9;
     }
     public List<CelsiusFahrenheit> pesquisaCelsiusFahrenheit(){
         String sql = "SELECT * FROM celsiusFahrenheit";

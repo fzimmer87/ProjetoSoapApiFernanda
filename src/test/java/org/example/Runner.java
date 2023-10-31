@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = {
                 "src/test/resources/feature/soap.feature",
         },
-        tags = "@CT004"
+        tags = "@CT017"
 )
 
 public class Runner {
